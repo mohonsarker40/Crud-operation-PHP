@@ -48,6 +48,7 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
 <div class="container mt-5">
+    <h4 class="text-center">User Edit/Update</h4>
     <div class="text-end">
         <button type="button" class="btn btn-primary mb-5">
             <a class="text-light text-decoration-none" href="list.php"> Back</a>
@@ -71,7 +72,7 @@ if(isset($_POST['submit'])) {
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password:</label>
-            <input value="<?php echo $password ?>" type="password" name="password" class="form-control" id="password"
+            <input value="<?php echo $password ?>" name="password" class="form-control" id="password"
                    placeholder="Enter password" required>
         </div>
         <div class="form-check mb-3">
@@ -79,7 +80,7 @@ if(isset($_POST['submit'])) {
                 <input class="form-check-input" type="checkbox" name="remember"> Remember me
             </label>
         </div>
-        <button type="submit" name="submit" class="btn btn-primary">Update
+        <button type="submit" name="submit" class="btn btn-primary col-12">Update
             <a href="list.php"></a>
         </button>
 

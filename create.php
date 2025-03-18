@@ -34,6 +34,7 @@ if(isset($_POST['submit'])){
 </head>
 <body>
 <div class="container mt-5">
+    <h4 class="text-center">User Create</h4>
     <div class="text-end">
         <button type="button" class="btn btn-primary mb-5">
             <a class="text-light text-decoration-none" href="list.php">User List</a>
@@ -61,7 +62,7 @@ if(isset($_POST['submit'])){
       <input class="form-check-input" type="checkbox" name="remember"> Remember me
     </label>
   </div>
-  <button type="submit" name="submit" class="btn btn-primary">Submit
+  <button type="submit" name="submit" class="btn btn-primary col-12">Submit
       <a href="list.php"></a>
   </button>
 

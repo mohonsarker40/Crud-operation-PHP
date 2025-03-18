@@ -10,18 +10,18 @@ include 'connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crud Operation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 <body>
 <div class="container mt-5">
+    <h4 class="text-center">User List(CRUD)</h4>
     <div class="text-end">
         <button type="button" class="btn btn-primary mb-5">
             <a class="text-light text-decoration-none" href="create.php">Add New</a>
         </button>
     </div>
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
-        <tr>
+        <tr class="text-center">
             <th scope="col">SL</th>
             <th scope="col">Full Name</th>
             <th scope="col">Email</th>
@@ -33,7 +33,7 @@ include 'connect.php';
 
     <?php
 
-        $sql = "Select * from crud";
+        $sql = "SELECT * FROM crud ORDER BY id DESC";
         $result = mysqli_query($con, $sql);
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -41,15 +41,17 @@ include 'connect.php';
                 $name = $row['Fname'];
                 $email = $row['email'];
                 $mobile = $row['mobile'];
-//                $password = $row['password'];
                 echo '
                         <tr>
                           <th scope="row">' . $id . '</th>
                           <td>' . $name . '</td>
                           <td>' . $email . '</td>
                           <td>' . $mobile . '</td>
-                          <td><a href="edit.php?id=' . $id . '" class="btn btn-sm btn-warning">Edit</a></td>
-                          <td><a href="delete.php?id=' . $id . '" class="btn btn-sm btn-danger">Delete</a></td>
+                          <td class="text-center">
+                                <a href="edit.php?id=' . $id . '" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="delete.php?id=' . $id . '" class="btn btn-sm btn-danger" onclick="return confirm(\'Delete Confirm\')">Delete</a>
+                          </td>
+                         
                         </tr>
                         ';
             }
@@ -60,4 +62,5 @@ include 'connect.php';
     </table>
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </html>
